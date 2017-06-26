@@ -1,0 +1,57 @@
+\documentclass[12pt,a4j, landscape, dvipdfmx]{utarticle}
+
+\usepackage{color} % not required for this example...
+\usepackage{hhline}
+\pagenumbering{gobble}
+
+\addtolength{\topmargin}{-1.1in}
+
+
+% height is 21 cm
+% width is 29.7 cm
+
+\def\cell(#1,#2){\rule{0pt}{3ex} \hspace*{-.4cm} {\LARGE #1} \newline \rule{0pt}{4ex} \hspace*{1cm} {\small #2}}
+
+\begin{document}
+
+\newcommand\T{\rule{0pt}{2.6ex}} 
+
+% in table height and width are flipped
+
+\begin{tabular}{|p{3.5cm} | p{3.5cm} | p{3.5cm} |  p{3.5cm} |  p{3.5cm} |}
+\hhline{|t:==:t:==:t|} 
+ \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+ \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+
+
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+% \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
+\end{tabular} 
+
+\begin{tabular}{||cc||c|c||}
+\hhline{|t:==:t:==:t|}
+a&b&c&d\\
+\hhline{|:==:|~|~||}
+1&2&3&4\\
+\hhline{#==#~|=#}
+i&j&k&l\\
+\hhline{||--||--||}
+w&x&y&z\\
+\hhline{|b:==:b:==:b|}
+\end{tabular}
+
+\begin{tabular}{||cc||cc||}
+\hhline{|t:==:t|t:==:t|}
+a&b&c&d\\
+\hhline{||--||--||}
+y&z&1&2\\
+\hhline{|b:==:b:==:b|}
+\end{tabular}
+
+\end{document}
