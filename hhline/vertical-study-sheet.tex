@@ -4,30 +4,63 @@
 \usepackage{hhline}
 \pagenumbering{gobble}
 
-\addtolength{\topmargin}{-1.1in}
+\addtolength{\textwidth}{1in}
+\addtolength{\textheight}{.65in}
+\addtolength{\topmargin}{-.6in}
 
 % height is 21 cm
 % width is 29.7 cm
 
-\def\cell(#1,#2){\rule{0pt}{3ex} \hspace*{-.4cm} {\LARGE #1} \newline \rule{0pt}{4ex} \hspace*{1cm} {\small #2}}
+\def\cell(#1,#2,#3){
+  \rule{0pt}{3ex} \hspace*{-.4cm}  {\LARGE #1} \newline
+  \rule{0pt}{3ex} \hspace*{.4cm}   {\small #2} \newline
+  \rule{0pt}{3ex} \hspace*{.425cm} {\small #3}
+}
+
+\def\tnewline{
+  \tabularnewline 
+  \hhline{|:=::=::=:|}
+}
 
 \begin{document}
 
-\newcommand\T{\rule{0pt}{2.6ex}} 
-
 % in table height and width are flipped
 
-\begin{tabular}{||p{5cm} || p{5cm} || p{5cm} ||}
+\noindent
+\begin{tabular}{||p{5.5cm} || p{5.5cm} || p{5.5cm} ||}
 \hhline{|t:=:t:=:t:=:t|}
-\cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) \tabularnewline 
 
-\hhline{|:=::=::=:|}
-\cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) \tabularnewline
+\cell(おとおさん,お父さん,father) & \cell(おかあさん,お母さん,mother) & \cell(おにいさん,お兄さん,younger brother)
+\tnewline
 
-\hhline{|:=::=::=:|}
-\cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) \tabularnewline
+\cell(おじさん,叔父さん,uncle) & \cell(たのしい,楽しい,fun) & \cell(かえる,帰る,go home)
+\tnewline
+
+\cell(ふたつ,二つ,two) & \cell(みっつ,三つ,three) & \cell(よっつ,四つ,four)
+\tnewline
+
+\cell(みる,見る,"see, look at") & \cell(みせる,見せる,to show) & \cell(いう,言う,to say)
+\tnewline
+
+\cell(おじさん,叔父さん,uncle) & \cell(たのしい,楽しい,fun) & \cell(かえる,帰る,go home)
+\tnewline
+
+\cell(ふたつ,二つ,two) & \cell(みっつ,三つ,three) & \cell(よっつ,四つ,four)
+\tnewline
+
+\cell(ふたつ,二つ,two) & \cell(みっつ,三つ,three) & \cell(よっつ,四つ,four)
+\tnewline
+
+\cell(ふたつ,二つ,two) & \cell(みっつ,三つ,three) & \cell(よっつ,四つ,four)
+\tnewline
+
+\cell(みる,見る,"see, look at") & \cell(みせる,見せる,to show) & \cell(いう,言う,to say)
+\tnewline
+
+\cell(はしる,走る,two) & \cell(ちかい,近い,near) & \cell(とおい,遠い,far) \\
 
 \hhline{|b:=:b:=:b:=:b|}
+
 \end{tabular} 
 
 \end{document}
