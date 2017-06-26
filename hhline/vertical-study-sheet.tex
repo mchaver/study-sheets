@@ -7,6 +7,10 @@
 \addtolength{\topmargin}{-1.1in}
 
 
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
 % height is 21 cm
 % width is 29.7 cm
 
@@ -18,12 +22,13 @@
 
 % in table height and width are flipped
 
-\begin{tabular}{|p{3.5cm} | p{3.5cm} | p{3.5cm} |  p{3.5cm} |  p{3.5cm} |}
-\hhline{|t:==:t:==:t|} 
- \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
- \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
-
-
+\begin{tabular}{||p{3.5cm} || p{3.5cm} || p{3.5cm} ||}
+\hhline{|t|t|t|}
+ \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) \tabularnewline 
+\hhline{|~|~|~|}
+ \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) \tabularnewline
+ 
+\hhline{|b|b|b|}
 % \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
 % \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
 % \cell(父,ちち) & \cell(お母さん,おかあさん) & \cell(お兄さん,おにいさん) & \cell(お姉さん,おねえさん) & \cell(妹,いもうと) \tabularnewline \hline
@@ -53,5 +58,31 @@ a&b&c&d\\
 y&z&1&2\\
 \hhline{|b:==:b:==:b|}
 \end{tabular}
+
+\begin{tabular}{||c||c||}
+\hhline{|t:=t=:t|}
+a&b\\
+\hhline{|:=::=:|}
+y&z\\
+\hhline{|b=b=b|}
+\end{tabular}
+
+\arrayrulecolor{black} 
+\doublerulesepcolor{gray!40} 
+\begin{tabular}{||>{\columncolor[gray]{0.9}\bfseries}c||c||c||c||c||}
+\hhline{|t:=:t:=:t:=:t:=:t:=:t|}
+\rowcolor{red!30}
+\multirow{2}{*}{alfa} & \bfseries beta & \multicolumn{2}{|c||}{\bfseries beta} & \bfseries alfa \\
+\hhline{||~|:=::=::=::=:|}
+& beta & alfa & beta & alfa \\
+\hhline{|:=::=::=::=::=:|}
+alfa & beta & alfa & beta & alfa \\
+\hhline{|:=::=::=::=::=:|}
+alfa & beta & alfa & beta & alfa \\
+\hhline{|:=::=::=::=::=:|}
+\rowcolor{green!30} gamma & delta & gamma & delta & gamma \\
+\hhline{|b:=:b:=:b:=:b:=:b:=:b|}
+\end{tabular}
+
 
 \end{document}
