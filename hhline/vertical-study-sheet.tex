@@ -4,9 +4,8 @@
 \usepackage{hhline}
 \pagenumbering{gobble}
 
-\addtolength{\textwidth}{1in}
-\addtolength{\textheight}{.65in}
-\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{.6in}
+\addtolength{\topmargin}{-.75in}
 
 % height is 21 cm
 % width is 29.7 cm
@@ -23,6 +22,11 @@
 }
 
 \begin{document}
+
+% for some reason the size of the page forces it to be printed on the second 
+% page. We can use a minipage to force it onto the first page.
+
+\begin{minipage}[t][0pt]{\linewidth}
 
 % in table height and width are flipped
 
@@ -57,10 +61,10 @@
 \cell(みる,見る,"see, look at") & \cell(みせる,見せる,to show) & \cell(いう,言う,to say)
 \tnewline
 
-\cell(はしる,走る,two) & \cell(ちかい,近い,near) & \cell(とおい,遠い,far) \\
+\cell(はしる,走る,run) & \cell(ちかい,近い,near) & \cell(とおい,遠い,far) \\
 
 \hhline{|b:=:b:=:b:=:b|}
 
 \end{tabular} 
-
+\end{minipage}
 \end{document}
