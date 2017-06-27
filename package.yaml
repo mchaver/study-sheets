@@ -1,0 +1,31 @@
+name: study-sheets
+version: '0.1.0.0'
+synopsis: Create study sheets for various topics with HaTeX
+description: README.md
+category: LaTeX
+author: James M.C. Haver II
+maintainer: mchaver@gmail.com
+copyright: James M.C. Haver II
+license: BSD3
+github: mchaver/study-sheets
+
+library: 
+  source-dirs: src
+  exposed-modules:
+  - Lib
+  dependencies:
+  - base >=4.7 && <5
+  - HaTeX
+  - matrix
+
+executables:
+  study-sheets:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-T
+    dependencies:
+    - base >=4.7 && <5
+    - study-sheets

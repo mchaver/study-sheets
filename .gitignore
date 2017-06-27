@@ -3,3 +3,5 @@
 *.dvi
 *.aux
 *.log
+*.cabal
+.stack-work
