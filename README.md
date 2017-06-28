@@ -3,6 +3,10 @@
 ```bash
 /Library/TeX/texbin/uplatex vertical-study-sheet.tex
 /Library/TeX/texbin/dvipdfmx vertical-study-sheet.dvi
+
+
+/Library/TeX/texbin/uplatex tables.tex
+/Library/TeX/texbin/dvipdfmx tables.dvi
 ```
 
 ### A4 size

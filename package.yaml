@@ -17,6 +17,7 @@ library:
   - base >=4.7 && <5
   - HaTeX
   - matrix
+  - text
 
 executables:
   study-sheets:
