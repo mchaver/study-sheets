@@ -30,3 +30,5 @@ executables:
     dependencies:
     - base >=4.7 && <5
     - study-sheets
+    - sqlite-simple
+    - text
