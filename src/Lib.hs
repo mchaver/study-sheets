@@ -14,13 +14,14 @@ import qualified Data.Text as T
 
 import Data.List (intercalate)
 
-run :: IO ()
-run = execLaTeXT tables >>= \l -> writeFile "tables.tex" (prettyLaTeX l)
+run :: [[(Text,Text,Text)]] -> IO ()
+run t = 
+  if balanced t 
+    then execLaTeXT (tables t) >>= writeFile "tables.tex" . prettyLaTeX
+    else print "Table is unbalanced. Unable to create study sheet"
 
-tables :: Monad m => LaTeXT m ()
-tables = thePreamble >> document (theBody [ [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
-                                          , [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
-                                          ])
+tables :: Monad m => [[(Text,Text,Text)]] -> LaTeXT m ()
+tables l = thePreamble >> document (theBody l)
 
 utarticle :: ClassName
 utarticle = "utarticle"
@@ -94,20 +95,17 @@ subTailInit as = (reverse $ tail sa) ++ [first_clean]
     first_clean = init first
     
 
+-- as must be greater that zero
 theBody :: Monad m => [[(Text,Text,Text)]] -> LaTeXT m ()
 theBody as = do
   noindent
-  tabular Nothing [DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine] 
+  tabular Nothing header -- [DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine] 
     (mconcat (
       [ hhlineTop width] ++
-      -- flatted   put & in middle of cells, remove last hhlineMiddle3, 
-      -- , (mconcat $ foldl1 (&) <$> subTailInit $ (++ [tabularnewline, hhlineMiddle width]) <$> fmap cell <$> as)
-        -- ( foldl1 (&) <$> fmap cell <$> as)
-        -- ( intercalate [tabularnewline, hhlineMiddle width] $ fmap cell <$> as)
         ( intercalate [tabularnewline, hhlineMiddle width] ((:[]) <$> foldl1 (&) <$> fmap cell <$> as))
-      --, ((cell "おとおさん" "お父さん" "father") & (cell "おかあさん" "お母さん" "mother") & (cell "おにいさん" "お兄さん" "younger brother")), tabularnewline, hhlineMiddle 3
-      --, ((cell "おとおさん" "お父さん" "father") & (cell "おかあさん" "お母さん" "mother") & (cell "おにいさん" "お兄さん" "younger brother")), tabularnewline
       ++ [tabularnewline, hhlineBottom width])
     )
   where
     width = length $ head as
+    columnWidth = 16.5 / (fromIntegral width)
+    header = [DVerticalLine] ++ (concat $ replicate width ([ParColumnTop ((raw . T.pack . show $ columnWidth) <> "cm"), DVerticalLine]))

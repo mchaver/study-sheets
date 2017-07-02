@@ -45,11 +45,20 @@ instance FromRow Entry where
 getEntries :: String -> IO [Entry]
 getEntries file = do 
   conn <- open file
-  flds <- query_ conn "SELECT core_id,lexeme,kana,definition,pos,jlpt FROM je WHERE jlpt=1 ORDER BY RANDOM() LIMIT 3" :: IO [Entry]
+  -- flds <- query_ conn "SELECT core_id,lexeme,kana,definition,pos,jlpt FROM je WHERE jlpt=1 ORDER BY RANDOM() LIMIT 3" :: IO [Entry]
   -- SELECT * FROM table ORDER BY RANDOM() LIMIT X
+  flds <- query_ conn "SELECT core_id,lexeme,kana,definition,pos,jlpt FROM je ORDER BY RANDOM() LIMIT 30" :: IO [Entry]
   mapM_ (putStrLn . kana) flds
   close conn
   return flds
+  
+transform :: [Entry] -> [[(Text,Text,Text)]]
+transform [] = []
+transform (a:b:c:rst) = [[zed a, zed b, zed c]] ++ transform rst
+  where
+    zed x = (kana x, lexeme x, definition x)
+transform _ = []
+
 {-
 make6000Db :: String -> [Entry] -> IO ()
 make6000Db file entries = do
@@ -73,8 +82,21 @@ make6000Db file entries = do
   
 -}
 
+
+{-
+10 x 3
+-}
+
+simple :: [[(Text,Text,Text)]]
+simple = 
+  [ [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
+  , [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
+  ]
+  
 main :: IO ()
 main = do 
-  es <- getEntries "je.sqlite"
+  es <- transform <$> getEntries "je.sqlite"
   print es
-  --run
+  --print es
+  --run simple
+  run es
