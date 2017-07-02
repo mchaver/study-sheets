@@ -1,12 +1,14 @@
 # vertical-study-sheet
 
 ```bash
-/Library/TeX/texbin/uplatex vertical-study-sheet.tex
-/Library/TeX/texbin/dvipdfmx vertical-study-sheet.dvi
+/Library/TeX/texbin/uplatex jp-en-vertical.tex
+/Library/TeX/texbin/dvipdfmx jp-en-vertical.dvi
 
 
 /Library/TeX/texbin/uplatex tables.tex
 /Library/TeX/texbin/dvipdfmx tables.dvi
+
+/Library/TeX/texbin/xelatex vertical-study-sheet.tex
 ```
 
 ### A4 size

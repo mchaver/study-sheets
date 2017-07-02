@@ -1,0 +1,94 @@
+
+%\documentclass[12pt,a4paper,dvipdfmx]{article}
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+
+\usepackage{color}
+\usepackage{hhline}
+\pagenumbering{gobble}
+
+% \addtolength{\textheight}{.6in}
+% \addtolength{\topmargin}{-.75in}
+
+% height is 29.7 cm
+% width is 21 cm
+
+\def\cell(#1,#2){
+  \rule{0pt}{3ex} {\Large #1} \newline
+  \rule{0pt}{3ex} \hspace*{.425cm} {\small #2} \vspace*{.3cm}
+}
+
+\def\tnewline{
+  \tabularnewline 
+  \hhline{|:=::=::=:|}
+}
+
+\begin{document}
+
+% \begin{CJK}{UTF8}{gbsn}
+% for some reason the size of the page forces it to be printed on the second 
+% page. We can use a minipage to force it onto the first page.
+
+% \begin{minipage}[t][0pt]{\linewidth}
+
+% in table height and width are flipped
+
+\noindent
+\begin{tabular}{||p{6cm} || p{6cm} || p{6cm} ||}
+\hhline{|t:=:t:=:t:=:t|}
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+\cell(el coche,車子) & \cell(el agua,水) & \cell(el niño,男孩)
+\tnewline
+
+
+\cell(la casa,房子) & \cell(el desayuno,早餐) & \cell(el dedo,手指頭) \\
+
+\hhline{|b:=:b:=:b:=:b|}
+
+\end{tabular} 
+% \end{minipage}
+\end{document}

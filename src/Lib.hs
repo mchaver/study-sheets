@@ -93,11 +93,20 @@ subTailInit as = (reverse $ tail sa) ++ [first_clean]
     sa          = reverse as
     first       = head sa
     first_clean = init first
-    
+
+-- \begin{minipage}[t][0pt]{\linewidth}
+
+{-
+document :: LaTeXC l => l -> l
+document = liftL $ TeXEnv "document" []
+-}
+singlepage :: LaTeXC l => l -> l
+singlepage = liftL $ TeXEnv "minipage" [OptArg "t", OptArg "0pt", FixArg (commS "linewidth")]
+
 
 -- as must be greater that zero
 theBody :: Monad m => [[(Text,Text,Text)]] -> LaTeXT m ()
-theBody as = do
+theBody as = singlepage $ do
   noindent
   tabular Nothing header -- [DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine, ParColumnTop "5.5cm", DVerticalLine] 
     (mconcat (
