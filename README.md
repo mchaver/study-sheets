@@ -8,7 +8,7 @@
 /Library/TeX/texbin/uplatex tables.tex
 /Library/TeX/texbin/dvipdfmx tables.dvi
 
-/Library/TeX/texbin/xelatex vertical-study-sheet.tex
+/Library/TeX/texbin/xelatex zh-es.tex
 ```
 
 ### A4 size
