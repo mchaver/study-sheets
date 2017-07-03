@@ -1,0 +1,72 @@
+\documentclass[12pt,a4j, landscape, dvipdfmx]{utarticle}
+
+\usepackage{color} % not required for this example...
+\usepackage{hhline}
+\pagenumbering{gobble}
+
+\addtolength{\textheight}{.6in}
+\addtolength{\topmargin}{-.75in}
+
+% height is 21 cm
+% width is 29.7 cm
+
+\def\emptycell{
+  \vspace*{1.925cm}
+}
+
+\def\emptycellrow{
+  \emptycell & \emptycell & \emptycell
+}
+
+\def\tnewline{
+  \tabularnewline 
+  \hhline{|:=::=::=:|}
+}
+
+\begin{document}
+
+% for some reason the size of the page forces it to be printed on the second 
+% page. We can use a minipage to force it onto the first page.
+
+\begin{minipage}[t][0pt]{\linewidth}
+
+% in table height and width are flipped
+
+\noindent
+\begin{tabular}{||p{5.5cm} || p{5.5cm} || p{5.5cm} ||}
+\hhline{|t:=:t:=:t:=:t|}
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\\
+\hhline{|b:=:b:=:b:=:b|}
+
+\end{tabular} 
+\end{minipage}
+\end{document}

@@ -8,6 +8,9 @@
 /Library/TeX/texbin/uplatex tables.tex
 /Library/TeX/texbin/dvipdfmx tables.dvi
 
+/Library/TeX/texbin/uplatex cjk-empty-vertical.tex
+/Library/TeX/texbin/dvipdfmx cjk-empty-vertical.dvi
+
 /Library/TeX/texbin/xelatex zh-es.tex
 ```
 
