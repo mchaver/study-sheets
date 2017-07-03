@@ -23,3 +23,9 @@
 ### Letter size
 
 21.59 x 27.94 centimeters
+
+### to do
+
+need to update en_zh_sat.db, only cleared until D
+
+study sheet for SAT, Korean, Cantonese, Taiwanese
