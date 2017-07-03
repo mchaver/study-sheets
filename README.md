@@ -12,6 +12,8 @@
 /Library/TeX/texbin/dvipdfmx cjk-empty-vertical.dvi
 
 /Library/TeX/texbin/xelatex zh-es.tex
+
+/Library/TeX/texbin/xelatex empty-small.tex
 ```
 
 ### A4 size

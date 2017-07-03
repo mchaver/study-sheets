@@ -1,0 +1,92 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+
+\usepackage{color}
+\usepackage{hhline}
+\pagenumbering{gobble}
+
+% \addtolength{\textheight}{.6in}
+% \addtolength{\topmargin}{-.75in}
+
+% height is 29.7 cm
+% width is 21 cm
+
+\def\cell(#1,#2){
+  \rule{0pt}{3ex} {\Large #1} \newline
+  \rule{0pt}{3ex} \hspace*{.425cm} {\small #2} \vspace*{.3cm}
+}
+
+\def\tnewline{
+  \tabularnewline 
+  \hhline{|:=::=::=:|}
+}
+
+\def\emptycell{
+  \vspace*{1.07cm}
+}
+
+\def\emptycellrow{
+  \emptycell & \emptycell & \emptycell
+}
+
+
+\begin{document}
+
+% \begin{minipage}[t][0pt]{\linewidth}
+
+% in table height and width are flipped
+
+\noindent
+\begin{tabular}{||p{5.825cm} || p{5.825cm} || p{5.825cm} ||}
+\hhline{|t:=:t:=:t:=:t|}
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\tnewline
+
+\emptycellrow
+\\
+\hhline{|b:=:b:=:b:=:b|}
+
+\end{tabular} 
+% \end{minipage}
+\end{document}
