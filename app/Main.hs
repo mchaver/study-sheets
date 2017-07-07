@@ -1,17 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Lib
-
 import Data.Text (Text)
+import Data.Text.IO (putStrLn)
 import Database.SQLite.Simple
 import Database.SQLite.Simple.FromRow
 import Database.SQLite.Simple.FromField
 import Database.SQLite.Simple.Internal
 import Database.SQLite.Simple.Ok
-
-import Data.Text.IO (putStrLn)
 import Prelude hiding (putStrLn)
+import Text.LaTeX.StudySheets.CJK.Vertical
 
 data JLPT =
   JLPT0 |
@@ -52,11 +50,11 @@ getEntries file = do
   close conn
   return flds
   
-transform :: [Entry] -> [[(Text,Text,Text)]]
+transform :: [Entry] -> [[JPCell]]
 transform [] = []
 transform (a:b:c:rst) = [[zed a, zed b, zed c]] ++ transform rst
   where
-    zed x = (kana x, lexeme x, definition x)
+    zed x = JPCell (kana x) (lexeme x) (definition x)
 transform _ = []
 
 {-
@@ -95,8 +93,5 @@ simple =
   
 main :: IO ()
 main = do 
-  es <- transform <$> getEntries "je.sqlite"
-  print es
-  --print es
-  --run simple
-  run es
+  cells <- transform <$> getEntries "jp_en.sqlite"
+  mkJPVerticalStudySheet "jp-sheet1.tex" cells

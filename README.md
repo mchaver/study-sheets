@@ -4,6 +4,8 @@
 /Library/TeX/texbin/uplatex jp-en-vertical.tex
 /Library/TeX/texbin/dvipdfmx jp-en-vertical.dvi
 
+/Library/TeX/texbin/uplatex jp-sheet1.tex
+/Library/TeX/texbin/dvipdfmx jp-sheet1.dvi
 
 /Library/TeX/texbin/uplatex tables.tex
 /Library/TeX/texbin/dvipdfmx tables.dvi

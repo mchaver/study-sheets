@@ -12,12 +12,16 @@ github: mchaver/study-sheets
 library: 
   source-dirs: src
   exposed-modules:
-  - Lib
+  - Text.LaTeX.StudySheets.CJK.Vertical
+  - Text.LaTeX.StudySheets.Utils
   dependencies:
   - base >=4.7 && <5
   - HaTeX
   - matrix
   - text
+  ghc-options:
+  - -Wall
+  - -Werror
 
 executables:
   study-sheets:
