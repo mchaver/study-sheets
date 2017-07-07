@@ -9,6 +9,7 @@ import Database.SQLite.Simple.FromField
 import Database.SQLite.Simple.Internal
 import Database.SQLite.Simple.Ok
 import Prelude hiding (putStrLn)
+import System.Environment (getArgs)
 import Text.LaTeX.StudySheets.CJK.Vertical
 
 data JLPT =
@@ -90,8 +91,17 @@ simple =
   [ [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
   , [("おとおさん","お父さん","father"),("おかあさん","お母さん","mother"),("おにいさん","お兄さん","younger brother")]
   ]
-  
+
+parseArgs :: [String] -> Maybe (FilePath)
+parseArgs ["-f", p] = Just p
+parseArgs ["--file", p] = Just p
+parseArgs _ = Nothing
+
 main :: IO ()
 main = do 
-  cells <- transform <$> getEntries "jp_en.sqlite"
-  mkJPVerticalStudySheet "jp-sheet1.tex" cells
+  mFile <- parseArgs <$> getArgs
+  case mFile of 
+    Nothing -> putStrLn "study-sheets requires a file path: -f <file-path>"
+    Just file -> do 
+      cells <- transform <$> getEntries "jp_en.sqlite"
+      mkJPVerticalStudySheet file cells
