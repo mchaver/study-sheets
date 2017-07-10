@@ -1,0 +1,101 @@
+\documentclass[12pt,a4j, landscape, dvipdfmx]{utarticle}
+
+\usepackage{color} % not required for this example...
+\usepackage{hhline}
+\pagenumbering{gobble}
+
+\addtolength{\textheight}{.6in}
+\addtolength{\topmargin}{-.75in}
+
+% height is 21 cm
+% width is 29.7 cm
+
+\def\hcell(#1){
+  \rule{0pt}{0ex} \hspace*{-.4cm}  {\LARGE #1}
+}
+
+\def\xcell(#1){
+  \rule{0pt}{3ex} {\LARGE #1}
+}
+
+\def\cell(#1,#2,#3){
+  \rule{0pt}{3ex} \hspace*{-.4cm}  {\LARGE #1} \newline
+  \rule{0pt}{3ex} \hspace*{.4cm}   {\small #2} \newline
+  \rule{0pt}{3ex} \hspace*{.425cm} {\small #3}
+}
+
+\def\tnewline{
+  \tabularnewline 
+  \hhline{|:=::=::=:|}
+}
+
+\begin{document}
+
+% for some reason the size of the page forces it to be printed on the second 
+% page. We can use a minipage to force it onto the first page.
+
+\begin{minipage}[t][0pt]{\linewidth}
+
+% in table height and width are flipped
+
+\noindent
+\begin{tabular}{||p{5.5cm} || p{5.5cm} || p{5.5cm} ||}
+\hhline{|t:=:t:=:t:=:t|}
+
+\hcell(丁寧語) & \hcell(尊敬語) & \hcell(謙譲語)
+\tnewline
+
+\xcell(見ます \newline) & \xcell(ご覧になる) & \xcell(拝見する)
+\tnewline
+
+\xcell(会います \newline) & \xcell(お会いになる) & \xcell(お目にかかる)
+\tnewline
+
+\xcell(あります \newline) & \xcell(いらっしゃる \newline \hspace*{-.05cm} おいでになる) & \xcell(ございます)
+\tnewline
+
+\xcell(います \newline) & \xcell(いらっしゃる \newline  \hspace*{-.05cm} おいでになる) & \xcell(おる)
+\tnewline
+
+\xcell(行きます \newline \hspace*{-.05cm} 来ます) & \xcell(いらっしゃる \newline \hspace*{-.05cm} おいでになる) & \xcell(伺う \newline \hspace*{-.05cm} 参る)
+\tnewline
+
+\xcell(知ります \newline) & \xcell(ご存じ) & \xcell(存じ上げる)
+\tnewline
+
+\xcell(食べます) & \xcell(召し上がる) & \xcell(いただく \newline \hspace*{-.05cm} 頂戴する)
+\tnewline
+
+\xcell(もらいます) & \xcell() & \xcell(いただく)
+\tnewline
+
+\xcell(あげます) & \xcell() & \xcell(差しあげる)
+\tnewline
+
+
+\xcell(くれます) & \xcell(くださる) & \xcell()
+\tnewline
+
+\xcell(言います) & \xcell(おっしゃる) & \xcell(申し上げる \newline \hspace*{-.05cm} 申す)
+\tnewline
+
+\xcell(着ます) & \xcell(お召しになる) & \xcell()
+\tnewline
+
+
+\xcell(寝ます) & \xcell(お休みになる) & \xcell()
+\tnewline
+
+\xcell(死にます) & \xcell(お亡くなりになる) & \xcell()
+\tnewline
+
+\xcell(聞きます) & \xcell() & \xcell(伺う)
+\tnewline
+
+\xcell(訪ねます) & \xcell() & \xcell(伺う)
+\\
+\hhline{|b:=:b:=:b:=:b|}
+
+\end{tabular} 
+\end{minipage}
+\end{document}
