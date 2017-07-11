@@ -11,17 +11,22 @@
 % width is 29.7 cm
 
 \def\hcell(#1){
-  \rule{0pt}{0ex} \hspace*{-.4cm}  {\LARGE #1}
+  \vspace*{-.1cm}
+  \rule{0pt}{0ex} \hspace*{1.2cm}  {\LARGE #1}
+  \vspace*{.2cm}
 }
 
 \def\xcell(#1){
   \rule{0pt}{3ex} {\LARGE #1}
+  \vspace*{.2cm}
 }
 
-\def\cell(#1,#2,#3){
-  \rule{0pt}{3ex} \hspace*{-.4cm}  {\LARGE #1} \newline
-  \rule{0pt}{3ex} \hspace*{.4cm}   {\small #2} \newline
-  \rule{0pt}{3ex} \hspace*{.425cm} {\small #3}
+\def\ncell(#1){
+  \rule{0pt}{3ex} {\Large #1}
+}
+
+\def\scell(#1){
+  \rule{0pt}{3ex} {\small #1}
 }
 
 \def\tnewline{
@@ -45,25 +50,34 @@
 \hcell(丁寧語) & \hcell(尊敬語) & \hcell(謙譲語)
 \tnewline
 
-\xcell(見ます \newline) & \xcell(ご覧になる) & \xcell(拝見する)
+\xcell(見ます) & \xcell(ご覧になる) & \xcell(拝見する)
 \tnewline
 
-\xcell(会います \newline) & \xcell(お会いになる) & \xcell(お目にかかる)
+\xcell(会います) & \xcell(お会いになる) & \xcell(お目にかかる)
 \tnewline
 
-\xcell(あります \newline) & \xcell(いらっしゃる \newline \hspace*{-.05cm} おいでになる) & \xcell(ございます)
+\xcell(あります) & \xcell(いらっしゃる) & \xcell(ございます)
 \tnewline
 
-\xcell(います \newline) & \xcell(いらっしゃる \newline  \hspace*{-.05cm} おいでになる) & \xcell(おる)
+\xcell(あります) & \xcell(おいでになる) & \xcell(ございます)
 \tnewline
 
-\xcell(行きます \newline \hspace*{-.05cm} 来ます) & \xcell(いらっしゃる \newline \hspace*{-.05cm} おいでになる) & \xcell(伺う \newline \hspace*{-.05cm} 参る)
+\xcell(います) & \xcell(いらっしゃる) & \xcell(おる)
 \tnewline
 
-\xcell(知ります \newline) & \xcell(ご存じ) & \xcell(存じ上げる)
+\xcell(います) & \xcell(おいでになる) & \xcell(おる)
 \tnewline
 
-\xcell(食べます) & \xcell(召し上がる) & \xcell(いただく \newline \hspace*{-.05cm} 頂戴する)
+\ncell(行きます / 来ます) & \scell(いらっしゃる / おいでになる) & \xcell(伺う / 参る)
+\tnewline
+
+\xcell(知ります) & \xcell(ご存じ) & \xcell(存じ上げる)
+\tnewline
+
+\xcell(食べます) & \xcell(召し上がる) & \ncell(いただく / 頂戴する)
+\tnewline
+
+\xcell(飲みます) & \xcell(召し上がる) & \ncell(いただく / 頂戴する)
 \tnewline
 
 \xcell(もらいます) & \xcell() & \xcell(いただく)
@@ -72,11 +86,10 @@
 \xcell(あげます) & \xcell() & \xcell(差しあげる)
 \tnewline
 
-
 \xcell(くれます) & \xcell(くださる) & \xcell()
 \tnewline
 
-\xcell(言います) & \xcell(おっしゃる) & \xcell(申し上げる \newline \hspace*{-.05cm} 申す)
+\xcell(言います) & \xcell(おっしゃる) & \ncell(申し上げる / 申す)
 \tnewline
 
 \xcell(着ます) & \xcell(お召しになる) & \xcell()
@@ -86,7 +99,7 @@
 \xcell(寝ます) & \xcell(お休みになる) & \xcell()
 \tnewline
 
-\xcell(死にます) & \xcell(お亡くなりになる) & \xcell()
+\xcell(死にます) & \ncell(お亡くなりになる) & \xcell()
 \tnewline
 
 \xcell(聞きます) & \xcell() & \xcell(伺う)

@@ -10,6 +10,9 @@
 /Library/TeX/texbin/uplatex tables.tex
 /Library/TeX/texbin/dvipdfmx tables.dvi
 
+/Library/TeX/texbin/uplatex keigo.tex
+/Library/TeX/texbin/dvipdfmx keigo.dvi
+
 /Library/TeX/texbin/uplatex cjk-empty-vertical.tex
 /Library/TeX/texbin/dvipdfmx cjk-empty-vertical.dvi
 
