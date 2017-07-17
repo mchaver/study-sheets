@@ -20,7 +20,7 @@ data JPCell =
     { jpLexeme     :: Text
     , jpKana       :: Text
     , jpDefinition :: Text
-    }
+    } deriving (Eq,Read,Show)
 
 mkJPVerticalStudySheet :: FilePath -> [[JPCell]] -> IO ()
 mkJPVerticalStudySheet file cells = 

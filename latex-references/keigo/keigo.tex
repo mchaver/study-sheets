@@ -5,7 +5,7 @@
 \pagenumbering{gobble}
 
 \addtolength{\textheight}{.6in}
-\addtolength{\topmargin}{-.75in}
+\addtolength{\topmargin}{-1.5cm}
 
 % height is 21 cm
 % width is 29.7 cm
@@ -39,6 +39,7 @@
 % for some reason the size of the page forces it to be printed on the second 
 % page. We can use a minipage to force it onto the first page.
 
+\noindent\makebox[\textwidth][c]{
 \begin{minipage}[t][0pt]{\linewidth}
 
 % in table height and width are flipped
@@ -110,5 +111,7 @@
 \hhline{|b:=:b:=:b:=:b|}
 
 \end{tabular} 
+
 \end{minipage}
+}
 \end{document}
